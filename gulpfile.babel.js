@@ -19,9 +19,10 @@ const imagemin = require('gulp-imagemin');
 const rename = require('gulp-rename');
 // 删除文件夹
 const clean = require('gulp-clean');
-
+// css添加前缀
+const autoprefix = require('gulp-autoprefixer');
+// es6
 const babel = require('gulp-babel');
-
 const es2015 = require('babel-preset-es2015');
 /*
 	Babel默认只转换新的js句法，而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（如Object.assign）都不会转码。
@@ -47,6 +48,7 @@ gulp.task('html', () => {
 // 处理css
 gulp.task('css', () => {
     return gulp.src(['style/*.css'])
+        .pipe(autoprefix('last 5 versions'))
         .pipe(cssmin({
             advanced: false, //类型：Boolean 默认：true [是否开启高级优化（合并选择器等）]
             compatibility: 'ie7', //保留ie7及以下兼容写法 类型：String 默认：''or'*' [启用兼容模式； 'ie7'：IE7兼容模式，'ie8'：IE8兼容模式，'*'：IE9+兼容模式]
