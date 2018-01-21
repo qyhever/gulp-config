@@ -1,0 +1,1 @@
+"use strict";sum(1,2);

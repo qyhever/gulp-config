@@ -1,0 +1,1 @@
+"use strict";var sum=function(e,r){console.log(e+r)},x=1,y=2,_ref=[y,x];x=_ref[0],y=_ref[1];
