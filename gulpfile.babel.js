@@ -55,7 +55,7 @@ gulp.task('test', () => {
 gulp.task('html', () => {
     return gulp.src(['src/index.html'])
         .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
     gulp.src(['src/views/*.html','src/views/**/*.html'])
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest('dist/views'));
